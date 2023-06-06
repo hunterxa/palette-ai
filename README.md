@@ -1,4 +1,5 @@
 # Palette AI
+Generate color palettes with AI!
 ___
 
 ## Description
