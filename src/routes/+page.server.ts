@@ -1,7 +1,6 @@
 import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit'
 import { Configuration, OpenAIApi } from 'openai';
-import { palette } from '$lib/utils/stores'
 import { OPENAI_API_KEY } from '$env/static/private';
 
 
@@ -23,7 +22,7 @@ export const actions: Actions = {
     try {
       const completion = await openai.createCompletion({
         model: "text-davinci-003",
-        prompt: `Suggest a color palette with 6 colors based on the color ${color}. Suggest the colors in hex format and in a comma separated list. Do not respond with any other text.`,
+        prompt: `Suggest a color palette with 6 colors based on the color ${color}. Have at least two of the colors be a complementary color and a shade of the complementary color. Suggest the colors in hex format and in a comma separated list. Do not respond with any other text.`,
         max_tokens: 80,
       });
       if (completion.data.choices[0].text) {

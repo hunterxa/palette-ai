@@ -15,7 +15,7 @@
 </svelte:head>
 
 <header>
-	#paletteai | report issues | source code
+	#paletteai | <a class="header-link" href="https://github.com/hunterxa/palette-ai/issues">report issues</a> | <a class="header-link" href="https://github.com/hunterxa/palette-ai">source code</a>
 </header>
 
 <main>
@@ -68,6 +68,15 @@
 		color: #96728D;
 		font-family: 'Rubik', sans-serif;
 		font-size: 0.875rem;
+	}
+
+	.header-link {
+		text-decoration: none;
+		color: #96728D;
+	}
+
+	.header-link:hover {
+		text-decoration: underline;
 	}
 
 	.home-container {
@@ -210,13 +219,14 @@
 	@media (min-width: 800px) {
 		header {
 			text-align: right;
-			margin-left: 1rem;
+			margin-right: 3rem;
 		}
 
 		.home-container {
 			display: grid;
 			grid-template-columns: 40% 60%;
 			margin-left: 2rem;
+			margin-top: 5rem;
 		}
 
 		.center {
@@ -259,20 +269,28 @@
 	}
 
 	@media (min-width: 1000px) {
+		header {
+			margin-right: 8rem;
+		}
+
 		img {
 			width: 400px;
 			height: 400px;
 		}
 
 		.home-container {
-			margin: 0 3rem;
+			margin: 5rem 3rem 0 3rem;
 		}
 	}
 
 	@media (min-width: 1200px) {
+		header {
+			margin-right: 8rem;
+		}
+
 		.home-container {
 			grid-template-columns: 1fr 1fr;
-			margin: 0 6rem;
+			margin: 5rem 6rem 0 6rem;
 		}
 
 		img {
